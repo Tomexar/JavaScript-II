@@ -1,7 +1,24 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+function parent() {
+  // The lexical scope of queen is kingdom() because that's where it was initially defined. Belong === lexical
+  const parent = "Grandfather";
+  console.log(`I am the ${parent}`);
+  
+  function child() {
+    const child = "Father";
+    console.log(`Hello, ${parent}`);
+    
+    function grandchild() {
+      console.log(`Hello, ${parent}`);
+      console.log(`Hello, ${child}`);
+    }  
+    grandchild();
+  }
+  child();
+}
 
-
+parent();
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
 
